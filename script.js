@@ -22,6 +22,9 @@ const richestPeople = [
 
   function createList() {
       [...richestPeople]
+        .map(a => ({ value: a, sort: Math.random()}))
+        .sort((a, b) => a.sort - b.sort)
+        .map(a => a.value)
         .forEach((person, index) => {
             const listItem = document.createElement('li');
 
